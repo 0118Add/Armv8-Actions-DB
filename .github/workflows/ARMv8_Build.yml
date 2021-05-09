@@ -4,8 +4,8 @@ on:
   repository_dispatch:
 #  release:
 #    types: published
-  schedule:
-    - cron: 30 23 * * *
+ # schedule:
+   # - cron: 30 23 * * *
   watch:
     types: started
 
