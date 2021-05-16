@@ -8,6 +8,9 @@
 # Blog: https://p3terx.com
 #============================================================
 
+# 修改默认IP
+sed -i 's/192.168.1.1/192.168.1.10/g' package/base-files/files/bin/config_generate
+
 #使用源码自带ShadowSocksR Plus+出国软件
 sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
 
