@@ -60,6 +60,13 @@ sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-flowo
 sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 #sed -i 's/"解锁网易云灰色歌曲"/"网易云音乐"/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 
+#readd cpufreq for aarch64
+sed -i 's/LUCI_DEPENDS.*/LUCI_DEPENDS:=\@\(arm\|\|aarch64\)/g' package/lean/luci-app-cpufreq/Makefile
+
+#replace coremark.sh with the new one
+rm package/lean/coremark/coremark.sh
+cp $GITHUB_WORKSPACE/general/coremark.sh package/lean/coremark/
+
 #赋予koolddns权限
 #chmod 0755 package/openwrt-packages/luci-app-koolddns/root/etc/init.d/koolddns
 #chmod 0755 package/openwrt-packages/luci-app-koolddns/root/usr/share/koolddns/aliddns
