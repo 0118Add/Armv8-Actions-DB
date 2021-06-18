@@ -7,7 +7,7 @@ fi
 
 TMPDIR=openwrt_rootfs
 OUTDIR=dockerimgs/docker
-IMG_NAME=minirailgun/openwrt-aarch64
+IMG_NAME=8688add/openwrt-aarch64
 
 [ -d "$TMPDIR" ] && rm -rf "$TMPDIR"
 
