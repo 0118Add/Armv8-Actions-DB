@@ -9,8 +9,8 @@ on:
       - master
     paths:
       - 'docker/buildImageX.sh'
-  #schedule:
-    #- cron: 30 23 * * *
+  schedule:
+    - cron: 30 23 * * *
   #watch:
     #types: started
 
@@ -92,13 +92,13 @@ jobs:
         docker push 8688add/openwrt-aarch64
         echo "::set-output name=status::success"
 
-    - name: Telegram notification
-      uses: appleboy/telegram-action@master
-      if: steps.push.outputs.status == 'success' && !cancelled()
-      with:
-        to: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: |
-          编译时间：${{ env.DATE }}
-          lede更新信息：${{ env.useVersionInfo }}
-          ${{ env.FILE_NAME }}推送成功
+#    - name: Telegram notification
+#      uses: appleboy/telegram-action@master
+#      if: steps.push.outputs.status == 'success' && !cancelled()
+#      with:
+#        to: ${{ secrets.TELEGRAM_TO }}
+#        token: ${{ secrets.TELEGRAM_TOKEN }}
+#        message: |
+#          编译时间：${{ env.DATE }}
+#          lede更新信息：${{ env.useVersionInfo }}
+#          ${{ env.FILE_NAME }}推送成功
