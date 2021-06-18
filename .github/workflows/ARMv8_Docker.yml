@@ -9,8 +9,8 @@ on:
       - master
     paths:
       - 'aarch64/ARMv8_Docker.config'
-  schedule:
-    - cron: 0 16 * * *
+  #schedule:
+    #- cron: 0 16 * * *
   # watch:
   #   types: started
 
