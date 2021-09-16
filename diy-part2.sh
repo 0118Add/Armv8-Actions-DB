@@ -45,7 +45,7 @@ git clone https://github.com/Lienol/openwrt-package.git package/openwrt-package
 #svn co https://github.com/fw876/helloworld/trunk/v2ray-plugin package/v2ray-plugin
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping package/tcping
 #svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy package/naiveproxy
-svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+#svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 rm -rf package/lean/luci-theme-argon
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
@@ -66,7 +66,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
 #git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic-mini.git package/luci-app-unblockneteasemusic-mini
-svn co https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom/trunk/luci-theme-infinityfreedom package/openwrt-packages/luci-theme-infinityfreedom
+#svn co https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom/trunk/luci-theme-infinityfreedom package/openwrt-packages/luci-theme-infinityfreedom
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/luci-app-gost package/lean/luci-app-gost
 #svn co https://github.com/project-openwrt/openwrt/trunk/package/ctcgfw/gost package/lean/gost
 #svn co https://github.com/8688Add/sirpdboy-package/trunk/luci-app-ddnsto package/luci-app-ddnsto
