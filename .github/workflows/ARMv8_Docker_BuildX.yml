@@ -2,17 +2,12 @@ name: ARMv8_Docker_BuildX
 
 on:
   repository_dispatch:
-#  release:
-#    types: published
-  push:
-    branches:
-      - master
-    paths:
-      - 'docker/buildImageX.sh'
-  #schedule:
-    #- cron: 30 23 * * *
-  watch:
-    types: started
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
