@@ -18,3 +18,6 @@
 #sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 #sed -i '$a src-git OpenClash https://github.com/vernesong/OpenClash' feeds.conf.default
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
+
+git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
+git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
