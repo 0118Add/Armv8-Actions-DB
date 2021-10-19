@@ -137,13 +137,3 @@ jobs:
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/coolsnowwolf/lede)更新记录】
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
-
-#    - name: Telegram notification
-#      uses: appleboy/telegram-action@master
-#      with:
-#        to: ${{ secrets.TELEGRAM_TO }}
-#        token: ${{ secrets.TELEGRAM_TOKEN }}
-#        message: |
-#          编译时间：${{ env.DATE }}
-#          lede更新信息：${{ env.useVersionInfo }}
-#          ${{ env.PRODUCT_NAME }}编译完成
