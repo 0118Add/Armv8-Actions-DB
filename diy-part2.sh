@@ -20,6 +20,7 @@ sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.de
 
 #添加额外软件包
 rm -rf package/lean/luci-lib-docker
+rm -rf package/lean/luci-app-dockerman
 git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 #git clone https://github.com/0118Add/sirpdboy-package.git package/sirpdboy-package
