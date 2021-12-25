@@ -1,4 +1,4 @@
-name: ARMv8
+name: ARMv8_SFE
 
 on:
   repository_dispatch:
@@ -13,7 +13,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: aarch64/lede.config
+  CONFIG_FILE: aarch64/ceshi.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   MRG_ADD_SH: aarch64/ARMv8.sh
@@ -25,7 +25,7 @@ env:
   UPLOAD_FIRMWARE: false
   TZ: Asia/Shanghai
   FILE_NAME: Files4Build
-  PRODUCT_NAME: ARMv8_FOL
+  PRODUCT_NAME: ARMv8_SFE
 jobs:
   build:
     runs-on: ubuntu-18.04
@@ -52,7 +52,6 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -93,7 +92,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        sed -i 's/192.168.1.1/192.168.1.10/g' package/base-files/files/bin/config_generate
+#        sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
 #        sed -i 's/OpenWrt/MRG AutoBuild ${{ env.DATE1 }} @ OpenWrt/g' package/lean/default-settings/files/zzz-default-settings
         
 #     - name: SSH connection to Actions
@@ -108,7 +107,6 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
     - name: Compile the firmware
       id: compile
       run: |
@@ -121,20 +119,19 @@ jobs:
         echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
         echo "DATE_YMD=_$(date +"%Y%m%d")" >> $GITHUB_ENV
         echo "::set-output name=status::success"
-
+    
     - name: Organize files
       id: organize
       if: steps.compile.outputs.status == 'success' && !cancelled()
       run: |
         cd $GITHUB_WORKSPACE/openwrt/bin/packages
-        tar -zcvf AllPackages.tar.gz ./*
-        cp AllPackages.tar.gz $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
+        tar -zcvf SF-AllPackages.tar.gz ./*
+        cp SF-AllPackages.tar.gz $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
         cd $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
-        rename 's/openwrt/openwrt/' openwrt*gz
+        rename 's/openwrt/SF-openwrt/' openwrt*gz
         rm -rf packages sha256sums config.buildinfo feeds.buildinfo openwrt-armvirt-64-default.manifest openwrt-armvirt-64-Image openwrt-armvirt-64-rootfs-ext4.img version.buildinfo
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
-
     - name: Upload bin directory
       uses: actions/upload-artifact@master
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
@@ -156,7 +153,7 @@ jobs:
         name: R${{ env.DATE }}
         allowUpdates: true
         tag: ${{ env.FILE_NAME }}
-        commit: main
+        commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
           ARMv8系列设备打包用临时固件，不可直刷
