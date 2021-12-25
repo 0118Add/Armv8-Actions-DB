@@ -80,49 +80,46 @@ jobs:
         #sudo cp $GITHUB_WORKSPACE/BuildARMv8/mk_*.tar.gz /opt/
         #sudo tar xvzf mk_*.tar.gz
         cd /opt
-        sudo cp $GITHUB_WORKSPACE/scripts/patches/*.patch ./
+        #sudo cp $GITHUB_WORKSPACE/scripts/patches/*.patch ./
         sudo cp $GITHUB_WORKSPACE/scripts/respawn_mks.sh ./
-        sudo git clone https://github.com/unifreq/openwrt_packit openwrt
+        sudo git clone https://github.com/unifreq/openwrt_packit
         sudo chmod +x ./respawn_mks.sh
         sudo ./respawn_mks.sh
-        cd /opt/openwrt
+        cd /opt/openwrt_packit
         sudo wget $(curl -s https://api.github.com/repos/0118Add/Armv8-Actions-DB/releases/51579040 | grep browser_download_url | cut -d '"' -f 4)
         chmod +x $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo cp $GITHUB_WORKSPACE/scripts/whoami ./
-        sudo ./mk_rk3328_beikeyun.sh
+        #sudo ./mk_rk3328_beikeyun.sh
+        sudo ./mk_rk3328_beikeyun_basic.sh
         sudo ./mk_rk3328_beikeyun_plus.sh
-        #sudo ./mk_rk3328_beikeyun_plusplus.sh
-        sudo ./mk_rk3328_beikeyun_plusplusplus.sh
+        sudo ./mk_rk3328_beikeyun_plusplus.sh
         #sudo ./mk_rk3328_l1pro.sh
+        #sudo ./mk_rk3328_l1pro_basic.sh
         #sudo ./mk_rk3328_l1pro_plus.sh
         #sudo ./mk_rk3328_l1pro_plusplus.sh
-        #sudo ./mk_rk3328_l1pro_plusplusplus.sh
-        sudo ./mk_s905d_n1.sh
+        #sudo ./mk_s905d_n1.sh
+        sudo ./mk_s905d_n1_basic.sh
         sudo ./mk_s905d_n1_plus.sh
-        #sudo ./mk_s905d_n1_plusplus.sh
-        sudo ./mk_s905d_n1_plusplusplus.sh
+        sudo ./mk_s905d_n1_plusplus.sh
         #sudo ./mk_s905x2_x96max.sh
+        #sudo ./mk_s905x2_x96max_basic.sh
         #sudo ./mk_s905x2_x96max_plus.sh
-        #sudo ./mk_s905x2_x96max_plusplus.sh
-        sudo ./mk_s905x3_multi.sh
+        #sudo ./mk_s905x3_multi.sh
+        sudo ./mk_s905x3_multi_basic.sh
         sudo ./mk_s905x3_multi_plus.sh
-        #sudo ./mk_s905x3_multi_plusplus.sh
-        sudo ./mk_s905x3_multi_plusplusplus.sh
+        sudo ./mk_s905x3_multi_plusplus.sh
         #sudo ./mk_s912_zyxq.sh
+        #sudo ./mk_s912_zyxq_basic.sh
         #sudo ./mk_s912_zyxq_plus.sh
         #sudo ./mk_s912_zyxq_plusplus.sh
         #sudo ./mk_s922x_gtking.sh
+        #sudo ./mk_s922x_gtking_basic.sh
         #sudo ./mk_s922x_gtking_plus.sh
-        #sudo ./mk_s922x_gtking_plusplus.sh
-        #sudo ./mk_s922x_odroid-n2.sh
-        #sudo ./mk_s922x_odroid-n2_plus.sh
-        #sudo ./mk_s922x_odroid-n2_plusplus.sh
-        #sudo ./mk_s922x_odroid-n2_plusplusplus.sh
-        sudo ./mk_h6_vplus.sh
+        #sudo ./mk_h6_vplus.sh
+        sudo ./mk_h6_vplus_basic.sh
         sudo ./mk_h6_vplus_plus.sh
-        #sudo ./mk_h6_vplus_plusplus.sh
-        sudo ./mk_h6_vplus_plusplusplus.sh
+        sudo ./mk_h6_vplus_plusplus.sh
         sudo cp ./*AllPackages.tar.gz ./output/
         sudo cp ./files/update*.sh ./output/
         echo "::set-output name=status::success"
@@ -133,7 +130,7 @@ jobs:
       run: |
         cd /opt/openwrt/output/
         pigz -6 -p $(nproc) *.img
-        rename 's/openwrt/openwrt/' openwrt*gz
+         
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
