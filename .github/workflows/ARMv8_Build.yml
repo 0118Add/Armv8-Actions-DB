@@ -91,10 +91,10 @@ jobs:
         sudo $GITHUB_WORKSPACE/$Update_Ver_SH
         sudo cp $GITHUB_WORKSPACE/scripts/whoami ./
         #sudo ./mk_rk3328_beikeyun.sh
-        sudo ./mk_rk3328_beikeyun_basic.sh
-        sudo ./mk_rk3328_beikeyun_plus.sh
-        sudo ./mk_rk3328_beikeyun_plusplus.sh
-        sudo ./mk_rk3328_beikeyun_plusplusplus.sh
+        #sudo ./mk_rk3328_beikeyun_basic.sh
+        #sudo ./mk_rk3328_beikeyun_plus.sh
+        #sudo ./mk_rk3328_beikeyun_plusplus.sh
+        #sudo ./mk_rk3328_beikeyun_plusplusplus.sh
         #sudo ./mk_rk3328_l1pro.sh
         #sudo ./mk_rk3328_l1pro_basic.sh
         #sudo ./mk_rk3328_l1pro_plus.sh
@@ -120,10 +120,10 @@ jobs:
         #sudo ./mk_s922x_gtking_basic.sh
         #sudo ./mk_s922x_gtking_plus.sh
         #sudo ./mk_h6_vplus.sh
-        sudo ./mk_h6_vplus_basic.sh
-        sudo ./mk_h6_vplus_plus.sh
-        sudo ./mk_h6_vplus_plusplus.sh
-        sudo ./mk_h6_vplus_plusplusplus.sh
+        #sudo ./mk_h6_vplus_basic.sh
+        #sudo ./mk_h6_vplus_plus.sh
+        #sudo ./mk_h6_vplus_plusplus.sh
+        #sudo ./mk_h6_vplus_plusplusplus.sh
         sudo cp ./*AllPackages.tar.gz ./output/
         sudo cp ./files/update*.sh ./output/
         echo "::set-output name=status::success"
