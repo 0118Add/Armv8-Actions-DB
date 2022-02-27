@@ -52,6 +52,7 @@ svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray-core package/xra
 #svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 #git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 #rm -rf package/lean/luci-theme-argon
+git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
 git clone -b revert-271-18.06_bing https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon-18.06
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
 #svn co https://github.com/siropboy/mypackages/trunk/luci-app-autopoweroff package/openwrt-packages/luci-app-autopoweroff
@@ -67,7 +68,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 #git clone https://github.com/bin20088/luci-app-koolproxy.git package/openwrt-packages/luci-app-koolproxy
 #git clone https://github.com/bin20088/luci-app-koolddns.git package/openwrt-packages/luci-app-koolddns
 #git clone https://github.com/QiuSimons/openwrt-mos.git package/luci-app-mosdns
-git clone https://github.com/vernesong/OpenClash.git package/luci-app-openclash
+git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
