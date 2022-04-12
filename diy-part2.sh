@@ -72,7 +72,7 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 git clone https://github.com/vernesong/OpenClash.git package/OpenClash
 #git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
-sed -i 's/解除网易云音乐播放限制/Unblock Netease Music/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
+sed -i 's/解除网易云音乐播放限制/音乐解锁/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 #git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic-mini.git package/luci-app-unblockneteasemusic-mini
 #svn co https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom/trunk/luci-theme-infinityfreedom package/openwrt-packages/luci-theme-infinityfreedom
@@ -97,7 +97,7 @@ echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/c
 wget -O ./package/base-files/files/etc/banner https://raw.githubusercontent.com/0118Add/Armbian/main/router/Openwrt_N1/diy/n1_lede/banner
 
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
-sed -i '175i\  --with-sandbox=rlimit \\' feeds/packages/net/openssh//Makefile
+#sed -i '175i\  --with-sandbox=rlimit \\' feeds/packages/net/openssh//Makefile
 
 # runc
 #sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.0.2/g' feeds/packages/utils/runc/Makefile
