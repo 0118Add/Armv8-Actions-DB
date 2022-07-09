@@ -148,7 +148,7 @@ jobs:
         cp SF-AllPackages.tar.gz $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
         cd $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
         rename 's/openwrt/SF-openwrt/' openwrt*gz
-        rm -rf packages sha256sums config.buildinfo feeds.buildinfo openwrt-armvirt-64-default.manifest openwrt-armvirt-64-Image openwrt-armvirt-64-rootfs-ext4.img version.buildinfo AllPackages.tar.gz F-openwrt-armvirt-64-rootfs.cpio.gz SF-openwrt-armvirt-64-rootfs.cpio.gz
+        rm -rf packages sha256sums config.buildinfo feeds.buildinfo openwrt-armvirt-64-default.manifest openwrt-armvirt-64-Image openwrt-armvirt-64-rootfs-ext4.img version.buildinfo AllPackages.tar.gz F-openwrt-armvirt-64-rootfs.cpio.gz SF-openwrt-armvirt-64-rootfs.cpio.gz openwrt-armvirt-64-Image-initramfs openwrt-armvirt-64-rootfs-squashfs.img
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
     
