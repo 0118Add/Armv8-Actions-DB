@@ -75,8 +75,7 @@ git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dock
 git clone https://github.com/kiddin9/openwrt-bypass.git package/bypass
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/passwall
-#git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
-#git clone https://github.com/leshanydy2022/luci-theme-bootstrap-mod.git package/luci-theme-bootstrap-mod
+svn co https://github.com/sirpdboy/build/trunk/pass package/pass
 git clone https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav
 git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
