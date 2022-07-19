@@ -86,3 +86,9 @@ jobs:
         docker tag 8688add/openwrt-aarch64 8688add/openwrt-aarch64:R${{ env.DATE_YMD }}
         docker push 8688add/openwrt-aarch64
         echo "::set-output name=status::success"
+
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 3
