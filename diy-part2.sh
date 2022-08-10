@@ -23,6 +23,9 @@ sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/helloworld/luci-app-ssr-plus/l
 # 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
 #sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
 
+# 替换内核
+sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g' target/linux/armvirt/Makefile
+
 # 修改系统文件
 #curl -fsSL https://raw.githubusercontent.com/0118Add/Actions-Shangyou/main/zzz-default-settings > ./package/lean/default-settings/files/zzz-default-settings
 #curl -fsSL https://raw.githubusercontent.com/0118Add/Actions-Shangyou/main/n1_index.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
