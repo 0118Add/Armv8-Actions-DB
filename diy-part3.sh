@@ -1,16 +1,11 @@
-#!/bin/bash
-#=============================================================
-# https://github.com/P3TERX/Actions-OpenWrt
-# File name: diy-part1.sh
-# Description: OpenWrt DIY script part 1 (Before Update feeds)
-# Lisence: MIT
-# Author: P3TERX
-# Blog: https://p3terx.com
-#=============================================================
+# 更改主机名
+sed -i "s/hostname='.*'/hostname='N1'/g" package/base-files/files/bin/config_generate
 
-# Uncomment a feed source
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+# 设置密码为空
+# sed -i '/CYXluq4wUazHjmCDBCqXF/d' $ZZZ
 
-# Add a feed source
-#sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
-
+git clone https://github.com/gd0772/package package/gd772
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new package/luci-theme-atmaterial_new
+wget https://raw.githubusercontent.com/0118Add/patch/main/n1.sh
+bash n1.sh
