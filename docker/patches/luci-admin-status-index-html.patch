@@ -34,8 +34,11 @@
  			if (e = document.getElementById('localtime'))
  				e.innerHTML = info.localtime;
  
-+			if (e = document.getElementById('cpustat'))
-+				e.innerHTML = info.cpustat;
+-			if (e = document.getElementById('cpustat'))
+-				e.innerHTML = info.cpustat;
+
++			if (e = document.getElementById('cpuinfo'))
++				e.innerHTML = info.cpuinfo;
 +
  			if (e = document.getElementById('uptime'))
  				e.innerHTML = String.format('%t', info.uptime);
@@ -44,7 +47,7 @@
  		<tr><td width="33%"><%:Kernel Version%></td><td><%=unameinfo.release or "?"%></td></tr>
  		<tr><td width="33%"><%:Local Time%></td><td id="localtime">-</td></tr>
  		<tr><td width="33%"><%:Uptime%></td><td id="uptime">-</td></tr>
-+		<tr><td width="33%"><%:CPU状态%></td><td id="cpustat">-</td></tr>
+-		<tr><td width="33%"><%:CPU状态%></td><td id="cpustat">-</td></tr>
  		<tr><td width="33%"><%:Load Average%></td><td id="loadavg">-</td></tr>
  		<tr><td width="33%"><%:CPU usage (%)%></td><td id="cpuusage">-</td></tr>
  	</table>
