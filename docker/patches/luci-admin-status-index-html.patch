@@ -20,12 +20,13 @@
  		local user_info = tonumber(luci.sys.exec("cat /proc/net/arp | grep 'br-lan' | grep '0x2' | wc -l"))
  		
 @@ -65,7 +65,8 @@
- 			conncount  = conn_count,
+ 			cpuinfo    = cpu_info, 			
+    conncount  = conn_count,
  			leases     = stat.dhcp_leases(),
  			leases6    = stat.dhcp6_leases(),
 -			wifinets   = stat.wifi_networks()
 +			wifinets   = stat.wifi_networks(),
-+			cpustat    = luci.sys.exec("/usr/bin/cpustat") or { }
+-			cpustat    = luci.sys.exec("/usr/bin/cpustat") or { }
  		}
  
  		if wan then
