@@ -21,7 +21,7 @@
  		
 @@ -65,7 +65,8 @@
  			cpuinfo    = cpu_info, 			
-    conncount  = conn_count,
+ 			conncount  = conn_count,
  			leases     = stat.dhcp_leases(),
  			leases6    = stat.dhcp6_leases(),
 -			wifinets   = stat.wifi_networks()
