@@ -22,7 +22,7 @@
 @@ -65,7 +65,8 @@
  			cpuinfo    = cpu_info, 			
 -			localtime  = os.date()
-+			localtime  = os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X"), 			
+			
  			conncount  = conn_count,
  			leases     = stat.dhcp_leases(),
  			leases6    = stat.dhcp6_leases(),
