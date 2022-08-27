@@ -4,7 +4,8 @@
  	local sysinfo = luci.util.ubus("system", "info") or { }
  	local boardinfo = luci.util.ubus("system", "board") or { }
  	local unameinfo = nixio.uname() or { }
-+	local cpustat = luci.sys.exec("/usr/bin/cpustat") or { }
+-	local cpustat = luci.sys.exec("/usr/bin/cpustat") or { }
++	local cpu_info = luci.sys.exec("/sbin/cpuinfo") or "ARM Processor x 0 (233MHz, 2.3°C)" or { }
  
  	local meminfo = sysinfo.memory or {
  		total = 0,
