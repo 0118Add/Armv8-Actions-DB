@@ -1,4 +1,4 @@
-name: ARMv8_Build
+name: S9xxx_Build
 
 on:
   repository_dispatch:
