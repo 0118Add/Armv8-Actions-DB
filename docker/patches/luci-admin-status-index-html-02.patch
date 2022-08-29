@@ -7,4 +7,5 @@
 -		<tr><td width="33%"><%:Architecture%></td><td><%=pcdata(boardinfo.system or "ARMv8 Processor")%> x <%=luci.sys.exec("cat /proc/cpuinfo | grep 'processor' | wc -l") or "1"%></td></tr>
 +		<tr><td width="33%"><%:Architecture%></td><td><%=luci.sys.exec("/usr/bin/cpustat -a")%></td></tr>
  		<tr><td width="33%"><%:Firmware Version%></td><td>
- 			<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>
+ 			<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%> /
+ 			<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)
