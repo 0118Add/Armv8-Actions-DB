@@ -22,8 +22,6 @@
  		local cpu_usage = (luci.sys.exec("expr 100 - $(top -n 1 | grep 'CPU:' | awk -F '%' '{print$4}' | awk -F ' ' '{print$2}')") or "6") .. "%"
  
 @@ -63,7 +63,8 @@
--			localtime  = os.date()
-+			localtime  = os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X"),
  			conncount  = conn_count,
  			leases     = stat.dhcp_leases(),
  			leases6    = stat.dhcp6_leases(),
