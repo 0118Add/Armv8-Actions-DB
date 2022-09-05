@@ -26,9 +26,11 @@ sed -i 's/DEPENDS:=@(.*/DEPENDS:=@(TARGET_bcm27xx||TARGET_bcm53xx||TARGET_ipq40x
 # 设置密码为空
 # sed -i '/CYXluq4wUazHjmCDBCqXF/d' $ZZZ
 
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+sed -i 's/"Argon 主题设置"/"主题设置"/g' package/luci-app-argon-config/po/zh-cn/argon-config.po
 git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-argonne package/luci-theme-argonne
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new package/luci-theme-atmaterial_new
 git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
 wget https://raw.githubusercontent.com/0118Add/patch/main/n1.sh
