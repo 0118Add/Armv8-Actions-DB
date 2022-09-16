@@ -48,5 +48,5 @@ sed -i "s|ARMv8|s9xxx_lede|g" package/amlogic/luci-app-amlogic/root/etc/config/a
 
 # 调整 Alist 文件列表 到 系统 菜单
 sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/controller/*.lua
-sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/model/cbi/*.lua
-sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/view/*.htm
+sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/model/cbi/alist/*.lua
+sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/view/alist/*.htm
