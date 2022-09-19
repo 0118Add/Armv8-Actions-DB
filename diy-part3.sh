@@ -35,8 +35,6 @@ sed -i 's/"Argon 主题设置"/"主题设置"/g' package/luci-app-argon-config/p
 git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new package/luci-theme-atmaterial_new
-git clone https://github.com/sbwml/luci-app-alist.git package/alist
-sed -i 's/Alist 文件列表/文件列表/g' package/alist/luci-app-alist/po/zh-cn/alist.po
 git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
 wget https://raw.githubusercontent.com/0118Add/patch/main/n1.sh
 bash n1.sh
@@ -45,8 +43,3 @@ bash n1.sh
 sed -i "s|https.*/s9xxx-openwrt|https://github.com/0118Add/N1dabao|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|opt/kernel|https://github.com/breakings/OpenWrt/opt/kernel|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|ARMv8|s9xxx_lede|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
-
-# 调整 Alist 文件列表 到 系统 菜单
-sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/controller/*.lua
-sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/model/cbi/alist/*.lua
-sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/view/alist/*.htm
