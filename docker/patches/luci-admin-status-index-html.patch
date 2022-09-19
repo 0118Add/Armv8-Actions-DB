@@ -45,4 +45,4 @@
                 <tr><td width="33%"><%:CPU负载%></td><td id="cpuusage">-</td></tr>
 +		<tr><td width="33%"><%:CPU状态%></td><td id="cpustat">-</td></tr>
  		<tr><td width="33%"><%:Load Average%></td><td id="loadavg">-</td></tr>
-       </table>
+        </table>
