@@ -38,6 +38,16 @@
  			if (e = document.getElementById('uptime'))
  				e.innerHTML = String.format('%t', info.uptime);
  				
+@@ -746,7 +746,7 @@
+        <table width="100%" cellspacing="10">
+                <tr><td width="33%"><%:Hostname%></td><td><%=luci.sys.hostname() or "?"%></td></tr>
+                <tr><td width="33%"><%:Model%></td><td><%=pcdata(boardinfo.model or "?")%> <%=luci.sys.exec("cat /etc/bench.log") or " "%></td></tr>
++		 <tr><td width="33%"><%:Architecture%></td><td><%=pcdata(boardinfo.system or "ARMv8 Processor")%> x <%=luci.sys.exec("cat /proc/cpuinfo | grep 'processor' | wc -l") or "1"%></td></tr>                
+-		 <tr><td width="33%"><%:Architecture%></td><td><%=luci.sys.exec("/usr/bin/cpustat -a")%></td></tr>                
+                <tr><td width="33%"><%:Firmware Version%></td><td>
+                        <%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>
+- 		<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)                        
+
 @@ -701,6 +705,7 @@
  		<tr><td width="33%"><%:Kernel Version%></td><td><%=unameinfo.release or "?"%></td></tr>
  		<tr><td width="33%"><%:Local Time%></td><td id="localtime">-</td></tr>
