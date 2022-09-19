@@ -8,4 +8,4 @@
 -		<tr><td width="33%"><%:Architecture%></td><td><%=luci.sys.exec("/usr/bin/cpustat -a")%></td></tr>
  		<tr><td width="33%"><%:Firmware Version%></td><td>
  			<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>
-- 		<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)
+- 		 <%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)
