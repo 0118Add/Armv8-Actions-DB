@@ -36,6 +36,7 @@ git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new package/luci-theme-atmaterial_new
 git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
+svn co https://github.com/haiibo/packages/trunk/luci-lib-ipkg package/luci-lib-ipkg
 wget https://raw.githubusercontent.com/0118Add/patch/main/n1.sh
 bash n1.sh
 
