@@ -36,9 +36,11 @@ git clone https://github.com/kiddin9/luci-theme-edge.git package/luci-theme-edge
 git clone https://github.com/sirpdboy/luci-theme-opentopd.git package/luci-theme-opentopd
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new package/luci-theme-atmaterial_new
 git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
-svn co https://github.com/haiibo/packages/trunk/luci-lib-ipkg package/luci-lib-ipkg
 wget https://raw.githubusercontent.com/0118Add/patch/main/n1.sh
 bash n1.sh
+
+# 修改 bypass 依赖
+sed -i 's/luci-lib-ipkg/luci-base/g' package/gd772/luci-app-bypass/Makefile
 
 # 晶晨宝盒
 sed -i "s|https.*/s9xxx-openwrt|https://github.com/0118Add/N1dabao|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
