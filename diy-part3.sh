@@ -40,7 +40,7 @@ wget https://raw.githubusercontent.com/0118Add/patch/main/n1.sh
 bash n1.sh
 
 # 修改 bypass 依赖
-sed -i 's/luci-lib-ipkg/luci-base/g' package/gd772/luci-app-bypass/Makefile
+sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-bypass/Makefile
 
 # 晶晨宝盒
 sed -i "s|https.*/s9xxx-openwrt|https://github.com/0118Add/N1dabao|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
