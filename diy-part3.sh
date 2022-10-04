@@ -14,7 +14,7 @@ sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g' target/linux/armvirt/Ma
 #sed -i "s/hostname='.*'/hostname='N1'/g" package/base-files/files/bin/config_generate
 
 # 更改版本日期
-sed -i "s/R22.9.1/R22.10.1/g" package/lean/default-settings/files/zzz-default-settings
+sed -i 's/R22.9.1/R22.10.1/g' package/lean/default-settings/files/zzz-default-settings
 
 # 内核替换成 kernel 5.4.xxx
 #sed -i 's/LINUX_KERNEL_HASH-5.4.203 = fc933f5b13066cfa54aacb5e86747a167bad1d8d23972e4a03ab5ee36c29798a/LINUX_KERNEL_HASH-5.4.210 = 940396878c2c183531669d87831eda60a86fbf4662904922c49151b50afc888e/g' ./include/kernel-5.4
