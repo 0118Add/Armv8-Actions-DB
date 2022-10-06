@@ -44,9 +44,6 @@ git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
 wget https://raw.githubusercontent.com/0118Add/patch/main/n1.sh
 bash n1.sh
 
-# 修改 bypass 依赖
-sed -i 's/luci-lib-ipkg/luci-base/g' package/luci-app-bypass/Makefile
-
 # 调整 Alist 文件列表 到 系统 菜单
 #sed -i 's/NAS/d' package/alist/luci-app-alist/luasrc/controller/*.lua
 #sed -i 's/nas/system/g' package/alist/luci-app-alist/luasrc/controller/*.lua
