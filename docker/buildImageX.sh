@@ -28,7 +28,7 @@ echo "17 3 * * * /etc/coremark.sh" >> "$TMPDIR/etc/crontabs/root" && \
 rm -rf "$TMPDIR/lib/firmware/*" "$TMPDIR/lib/modules/*" && \
 (cd "$TMPDIR" && tar cf ../openwrt-armvirt-64-default-rootfs-patched.tar .) && \
 rm -f DockerImg-OpenwrtArm64-${TAG}.gz && \
-#docker build -t ${IMG_NAME}:${TAG} . && \
+docker build -t ${IMG_NAME}:${TAG} . && \
 docker buildx build --platform=linux/arm64 -o type=docker -t ${IMG_NAME}:${TAG} . && \
 rm -f  openwrt-armvirt-64-default-rootfs-patched.tar && \
 rm -rf "$TMPDIR" && \
