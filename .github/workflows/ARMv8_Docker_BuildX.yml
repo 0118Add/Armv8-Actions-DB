@@ -83,8 +83,8 @@ jobs:
         ./$DOCKER_BUILD_SH
         gzip -dc dockerimgs/docker/*.gz | docker load
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
-        docker tag 8688add/openwrt-aarch64 8688add/openwrt-aarch64:R${{ env.DATE_YMD }}
-        docker push 8688add/openwrt-aarch64
+        docker tag 8688add/test-openwrt-aarch64 8688add/test-openwrt-aarch64:R${{ env.DATE_YMD }}
+        docker push 8688add/test-openwrt-aarch64
         echo "::set-output name=status::success"
 
     - name: Delete workflow runs
