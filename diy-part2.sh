@@ -42,8 +42,8 @@ echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/c
 # 添加额外软件包
 #rm -rf feeds/luci/collections/luci-lib-docker
 #rm -rf feeds/luci/applications/luci-app-dockerman
-rm -rf feeds/packages/lang/golang
-svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
+#rm -rf feeds/packages/lang/golang
+#svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
 #rm -rf feeds/luci/applications/luci-app-netdata
 #rm -rf feeds/luci/applications/luci-app-aliyundrive-webdav
 #rm -rf feeds/packages/multimedia/aliyundrive-webdav
@@ -57,8 +57,9 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/lua-maxminddb package/l
 svn co https://github.com/0118Add/openwrt-packages/trunk/luci-app-bypass package/luci-app-bypass
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall2
 #git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
-git clone https://github.com/sbwml/luci-app-alist.git package/alist
+#git clone https://github.com/sbwml/luci-app-alist.git package/alist
 #git clone https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav
 #git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 #git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
@@ -86,7 +87,7 @@ sed -i 's/WireGuard 状态/WiGd状态/g' feeds/luci/applications/luci-app-wiregu
 sed -i 's/Turbo ACC 网络加速/网络加速/g' feeds/luci/applications/luci-app-turboacc/po/zh-cn/turboacc.po
 
 #luci-app-amlogic 晶晨宝盒
-sed -i "s|https.*/s9xxx-openwrt|https://github.com/0118Add/N1dabao|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|https.*/s9xxx-openwrt|https://github.com/0118Add/Armv8-Actions-DB|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|opt/kernel|https://github.com/breakings/OpenWrt/opt/kernel|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|ARMv8|s9xxx_lede|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
