@@ -88,7 +88,7 @@ sed -i 's/Turbo ACC 网络加速/网络加速/g' feeds/luci/applications/luci-ap
 
 #luci-app-amlogic 晶晨宝盒
 sed -i "s|https.*/s9xxx-openwrt|https://github.com/0118Add/Armv8-Actions-DB|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i "s|opt/kernel|https://github.com/breakings/OpenWrt/opt/kernel|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|opt/kernel|https://github.com/0118Add/kernel|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|ARMv8|s9xxx_lede|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
 # TIME b "调整 Dockerman 到 服务 菜单"
