@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.2.10/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/10.0.0.10/g' package/base-files/files/bin/config_generate
 
 #使用源码自带ShadowSocksR Plus+出国软件
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
