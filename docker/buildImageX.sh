@@ -13,7 +13,7 @@ IMG_NAME=8688add/test-openwrt-aarch64
 
 mkdir -p "$TMPDIR"  && \
 mkdir -p "$OUTDIR"  && \
-gzip -dc openwrt-armvirt-64-default-rootfs.tar.gz | ( cd "$TMPDIR" && tar xf - ) && \
+gzip -dc openwrt-armvirt-64-generic-rootfs.tar.gz | ( cd "$TMPDIR" && tar xf - ) && \
 cp -f patchesx/rc.local "$TMPDIR/etc/" && \
 cp -f patchesx/cpustat "$TMPDIR/usr/bin/" && chmod 755 "$TMPDIR/usr/bin/cpustat" && \
 cp -f patchesx/getcpu "$TMPDIR/bin/" && chmod 755 "$TMPDIR/bin/getcpu" && \
@@ -26,10 +26,10 @@ ddd=$((sss/86400)) && \
 sed -e "s/:0:0:99999:7:::/:${ddd}:0:99999:7:::/" -i "${TMPDIR}/etc/shadow" && \
 echo "17 3 * * * /etc/coremark.sh" >> "$TMPDIR/etc/crontabs/root" && \
 rm -rf "$TMPDIR/lib/firmware/*" "$TMPDIR/lib/modules/*" && \
-(cd "$TMPDIR" && tar cf ../openwrt-armvirt-64-default-rootfs-patched.tar .) && \
+(cd "$TMPDIR" && tar cf ../openwrt-armvirt-64-generic-rootfs-patched.tar .) && \
 rm -f DockerImg-OpenwrtArm64-${TAG}.gz && \
 docker build -t ${IMG_NAME}:${TAG} . && \
 docker buildx build --platform=linux/arm64 -o type=docker -t ${IMG_NAME}:${TAG} . && \
-rm -f  openwrt-armvirt-64-default-rootfs-patched.tar && \
+rm -f  openwrt-armvirt-64-generic-rootfs-patched.tar && \
 rm -rf "$TMPDIR" && \
 docker save ${IMG_NAME}:${TAG} | pigz -9 > $OUTDIR/docker-img-openwrt-aarch64-${TAG}.gz
