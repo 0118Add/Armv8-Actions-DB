@@ -60,6 +60,11 @@ wget -O ./package/base-files/files/etc/banner https://raw.githubusercontent.com/
 # 删除主题强制默认
 #find package/luci-theme-*/* -type f -name '*luci-theme-*' -print -exec sed -i '/set luci.main.mediaurlbase/d' {} \;
 
+# 修改版本为编译日期
+date_version=$(date +"%y.%m.%d")
+orig_version=$(cat "package/lean/default-settings/files/zzz-default-settings" | grep DISTRIB_REVISION= | awk -F "'" '{print $2}')
+sed -i "s/${orig_version}/R${date_version} (by BGG)/g" package/lean/default-settings/files/zzz-default-settings
+
 # 添加旁路由防火墙
 echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
 
