@@ -87,12 +87,17 @@ merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/dae
 git clone https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata package/luci-app-netdata
 git clone https://github.com/0118Add/luci-app-vssr package/luci-app-vssr
-git clone https://github.com/sbwml/luci-app-daed-next package/luci-app-daed-next
+git clone https://github.com/QiuSimons/luci-app-daed-next package/luci-app-daed-next
 git clone https://github.com/jerrykuku/lua-maxminddb package/lua-maxminddb
-#git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
-merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/sing-box
-git clone https://github.com/fw876/helloworld.git package/helloworld
+#merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/sing-box
+#git clone https://github.com/fw876/helloworld.git package/helloworld
+merge_package https://github.com/fw876/helloworld helloworld/luci-app-ssr-plus
+merge_package https://github.com/fw876/helloworld helloworld/lua-neturl
+merge_package https://github.com/fw876/helloworld helloworld/mosdns
+merge_package https://github.com/fw876/helloworld helloworld/shadow-tls
+merge_package https://github.com/fw876/helloworld helloworld/redsocks2
 #git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall2
 #git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
 #git clone https://github.com/sbwml/luci-app-alist.git package/alist
@@ -118,7 +123,7 @@ sed -i 's/解除网易云音乐播放限制/音乐解锁/g' package/luci-app-unb
 sed -i 's/Argon 主题设置/Argon设置/g' feeds/luci/applications/luci-app-argon-config/po/zh-cn/argon-config.po
 sed -i 's/Design 主题设置/Design设置/g' feeds/luci/applications/luci-app-design-config/po/zh-cn/design-config.po
 sed -i 's/一键分区扩容/分区扩容/g' package/luci-app-partexp/po/zh-cn/partexp.po
-sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/custom/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 #sed -i 's/Argon 主题设置/主题设置/g' feeds/luci/applications/luci-app-argon-config/po/zh-cn/argon-config.po
 #sed -i 's/Frp 内网穿透/内网穿透/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 #sed -i 's/Docker CE 容器/Docker 容器/g' feeds/luci/applications/luci-app-docker/po/zh-cn/docker.po
